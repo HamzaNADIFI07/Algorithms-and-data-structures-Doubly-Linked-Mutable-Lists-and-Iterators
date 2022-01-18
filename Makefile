@@ -13,7 +13,6 @@ endef
 clean:
 	rm -f *~ */*~
 	rm -rf __pycache__ src/__pycache__
-	rm -rf $(DOC)
 	rm -f $(PROJECT).zip
 	rm -f conf.py-e
 	rm -f */*.pyc
