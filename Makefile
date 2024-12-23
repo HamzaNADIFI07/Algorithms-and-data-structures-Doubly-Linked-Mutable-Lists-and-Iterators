@@ -1,6 +1,6 @@
 PROJECT=tp-iterateurs
 AUTHOR=FIL-ASD
-SOURCES=experience.py marker.py sorting.py
+SOURCES=listiterator.py
 FULL_SOURCES=$(addprefix src/, $(SOURCES))
 
 define execute-command
