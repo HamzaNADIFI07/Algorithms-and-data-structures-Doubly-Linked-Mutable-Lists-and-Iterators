@@ -156,8 +156,10 @@ class List:
               list (List): The list to iterate on
             '''
 
-            # Beware! Your attributes cannot have the same names as the class methods.
-            pass
+            self.list=list
+            self.tail=list.tail
+            self.head=list.head
+
                 
         def hasNext (self):
             """
