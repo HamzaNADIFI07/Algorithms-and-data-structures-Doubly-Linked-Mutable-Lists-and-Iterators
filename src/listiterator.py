@@ -81,7 +81,11 @@ class List:
             """
             Print all the list from the cell back to the beginning of the list
             """
-            pass
+            print(self.value, end=' ')
+            if self.prev != None:
+                self.prev.__print_without_iterator_reversed ()
+            else:
+                print()
 
     def __init__ (self):
         """

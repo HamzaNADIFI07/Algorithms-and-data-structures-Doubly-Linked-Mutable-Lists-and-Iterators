@@ -1,5 +1,5 @@
 PROJECT=tp-iterateurs
-AUTHOR=FIL-ASD
+AUTHOR=Hamza NADIFI
 SOURCES=listiterator.py
 FULL_SOURCES=$(addprefix src/, $(SOURCES))
 
