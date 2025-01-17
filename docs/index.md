@@ -1,4 +1,4 @@
-# Tp itérateurs
+# Tp_itérateurs
 
 
 ## État du TP
@@ -23,5 +23,16 @@ _Commande executée: `python3 test.py`_
 1 2 3 4 
 4 3 2 1 
 ```
+### Deuxième phase : ajout des itérateurs
 
+##### Q1:
+Pour définir la classe `ListIterator`, on aura besoin des informations suivantes:
+- `head`
+- `tail`
+
+```python
+self.list=list
+self.tail=list.tail
+self.head=list.head
+```
 

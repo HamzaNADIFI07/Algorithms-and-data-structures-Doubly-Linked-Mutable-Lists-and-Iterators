@@ -157,8 +157,9 @@ class List:
             '''
 
             self.list=list
-            self.tail=list.tail
-            self.head=list.head
+            self.nextCell=list.head
+            self.prevCell=None  
+            self.current_cell = list.head
 
                 
         def hasNext (self):
@@ -169,7 +170,7 @@ class List:
                      (In other words, returns `True` if `self.next()` would
                      return an element rather than throwing an exception.)
             """
-            pass
+            return self.nextCell!=None
 
 
         def next (self):
@@ -184,7 +185,13 @@ class List:
             Raises:
               NoSuchElementException: if there is no such element
             """
-            pass
+            if self.hasNext ():
+                nextCellule=self.nextCell
+                self.nextCell=self.nextCell.next
+                self.prevCell=nextCellule
+                return nextCellule.value
+            else:
+              raise NoSuchElementException('There is no such element')
 
         def hasPrevious (self):
             """
@@ -194,7 +201,7 @@ class List:
               returns `True` if `self.previous()` would return an
               element rather than throwing an exception.)
             """
-            pass
+            return self.prevCell!=None
 
         def previous (self):
             """
@@ -208,7 +215,13 @@ class List:
             Raises:
               NoSuchElementException: if there is no such element
             """
-            pass
+            if self.hasPrevious ():
+                prevCellule=self.prevCell
+                self.nextCell=prevCellule 
+                self.prevCell=self.prevCell.prev
+                return prevCellule.value
+            else:
+              raise NoSuchElementException('There is no such element')
         
         def add (self,value):
             """
@@ -224,7 +237,20 @@ class List:
             Args:
               value (any): The element
             """
-            pass
+            #Insertion à la fin de la liste
+            if not self.hasNext():
+                prevCellule=self.prevCell
+                newCell=self.list.Cell(value, None, prevCellule)
+                self.prevCell.next=newCell
+                self.nextCell=newCell
+                self.next()
+                self.list.tail=newCell
+            #Insertion à la fin de la liste
+            elif not self.hasPrevious():
+                newCell=self.list.Cell(value, self.nextCell, None)
+                self.list.head=newCell
+                self.prevCell=newCell
+                self.nextCell.prev=newCell
 
         def remove (self):
             """

@@ -10,7 +10,9 @@ def print_with_iterator (l):
     Args:
       l (List): The list to be printed
     """
-    pass
+    iterator = l.get_listiterator()
+    while iterator.hasNext():
+      print(iterator.next(), end=' ')
 
 def print_with_iterator_reverse (l):
     """
@@ -19,7 +21,11 @@ def print_with_iterator_reverse (l):
     Args:
       l (List): The list to be printed
     """
-    pass
+    iterator = l.get_listiterator()
+    while iterator.hasNext():
+      iterator.next()
+    while iterator.hasPrevious():
+      print(iterator.previous(), end=' ')
 
 def print_with_iterator_reverse_bis (l):
     """
@@ -67,26 +73,26 @@ if __name__ == "__main__":
     l.print(reverse=True)
 
 #    # test 1 : impression avec iterateurs
-#    print ('--- test 1 ---')
-#    print_with_iterator(l)
-#    print_with_iterator_reverse(l)
-#
-#    # test 2 : verification des exceptions
-#    print ('--- test 2 ---')
-#    try:
-#        it = l.get_listiterator()
-#        while True:
-#            it.next()
-#    except NoSuchElementException:
-#        print("Exception levee avec next")
-#    try:
-#        it = l.get_listiterator()
-#        while True:
-#            it.previous()
-#    except NoSuchElementException:
-#        print("Exception levee avec previous")
-#        
-##    
+    print ('--- test 1 ---')
+    print_with_iterator(l)
+    print_with_iterator_reverse(l)
+
+   # test 2 : verification des exceptions
+    print ('--- test 2 ---')
+    try:
+        it = l.get_listiterator()
+        while True:
+            it.next()
+    except NoSuchElementException:
+        print("Exception levee avec next")
+    try:
+        it = l.get_listiterator()
+        while True:
+            it.previous()
+    except NoSuchElementException:
+        print("Exception levee avec previous")
+       
+#    
 #    # test 3 : insertion avant le 3eme element
 #    print ('--- test 3 ---')
 #    it = l.get_listiterator()
