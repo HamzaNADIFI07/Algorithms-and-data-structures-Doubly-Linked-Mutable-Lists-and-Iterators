@@ -101,9 +101,8 @@ Le choix d'implémentation de la fonction `ordered_insert` qui prend en paramèt
 1. On définit une boucle **while** avec deux condition:
     - `iterator.hasNext()`:L'element pointé a une `next`
     - `not trouve`:La variable initialisé a `False` et qui devient `True`, quand l'element est trouvé est encore en `False`. 
-2. 
-3. 
-4. 
+2. Si l'élement `next` de l'élement courant est supérieur à la valeur qu'on voudrait rajouter on déclare qu'on a trouvé la position où on veux ajouter l'element à la variable `trouvé` en changé sa valeur à **True**, et on sortira de la boucle pour exécuter l'instruction `iterator.add(value)` qui permet de rajouter l'element.
+3. Sinon on exécute l'instruction `iterator.next()` pour itérer vers l'element suivant.
 
 **Le rendu du test 9 est comme suit:**
 
