@@ -67,4 +67,24 @@ Après implémentation de la fonction `add(self,value)` qui permet de ajouter un
 0 1 2 23 3 4 45 45 4 3 23 2 1 0 #Insertion en début de Liste
 ```
 
+### Itérateurs à partir de la queue
+
+##### Q3:
+
+**Le rendu du test 6 et 7 est comme suit:**
+
+```bash
+--- test 6 ---
+0 1 2 23 3 4 445 45 45 445 4 3 23 2 1 0 
+--- test 7 ---
+45
+445
+4
+3
+23
+2
+1
+0
+
+```
 

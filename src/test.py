@@ -34,7 +34,9 @@ def print_with_iterator_reverse_bis (l):
     Args:
       l (List): The list to be printed
     """
-    pass
+    iterator = l.get_listiterator(reverse=True)
+    while iterator.hasPrevious():
+        print(iterator.previous())
 
 def ordered_insert (l, value):
     """
@@ -121,26 +123,26 @@ if __name__ == "__main__":
   print_with_iterator(l)
   print_with_iterator_reverse(l)
 # #
-#    # test 6 : insertion avant le dernier element avec l'iterateur placé en fin
-#    print ('--- test 6 ---')
-#    it = l.get_listiterator (True)
-#    it.previous()
-#    it.add(445)
-#    assert(it.previous() == 445)
-#    print_with_iterator(l)
-#    print_with_iterator_reverse(l)
-##
-#    # test 7 : affichage à l'envers avec l'itérateur placé en fin
-#    print ('--- test 7 ---')
-#    print_with_iterator_reverse_bis(l)
-#    
-#    # test 8 : ajout après le dernier élément
-#    print ('--- test 8 ---')
-#    it = l.get_listiterator (True)
-#    it.add(5)
-#    assert(it.previous() == 5)
-#    print_with_iterator(l)
-#    print_with_iterator_reverse(l)
+   # test 6 : insertion avant le dernier element avec l'iterateur placé en fin
+  print ('--- test 6 ---')
+  it = l.get_listiterator (True)
+  it.previous()
+  it.add(445)
+  assert(it.previous() == 445)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
+#
+   # test 7 : affichage à l'envers avec l'itérateur placé en fin
+  print ('--- test 7 ---')
+  print_with_iterator_reverse_bis(l)
+   
+   # test 8 : ajout après le dernier élément
+  # print ('--- test 8 ---')
+  # it = l.get_listiterator (True)
+  # it.add(5)
+  # assert(it.previous() == 5)
+  # print_with_iterator(l)
+  # print_with_iterator_reverse(l)
 ##        
 #    # test 9 : inserer trié, à vous d'écrire ce test
 #    print ('--- test 9 ---')
