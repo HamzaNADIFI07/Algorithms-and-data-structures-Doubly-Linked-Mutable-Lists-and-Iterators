@@ -245,12 +245,22 @@ class List:
                 self.nextCell=newCell
                 self.next()
                 self.list.tail=newCell
-            #Insertion à la fin de la liste
+            #Insertion au début de la liste
             elif not self.hasPrevious():
                 newCell=self.list.Cell(value, self.nextCell, None)
                 self.list.head=newCell
                 self.prevCell=newCell
                 self.nextCell.prev=newCell
+            #Inserion au milieu de la liste 
+            else:
+                prevCellule=self.prevCell
+                newCell=self.list.Cell(value, self.nextCell, prevCellule)
+                self.prevCell.next=newCell
+                self.nextCell.prev=newCell
+                self.next()
+                self.previous()
+                
+            return newCell
 
         def remove (self):
             """

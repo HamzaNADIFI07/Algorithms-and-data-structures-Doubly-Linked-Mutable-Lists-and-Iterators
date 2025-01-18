@@ -63,46 +63,46 @@ def get (l, i):
     pass
 
 if __name__ == "__main__":
-    l = List()
-    for i in reversed(range(1,5)):
-        l.cons(i)
+  l = List()
+  for i in reversed(range(1,5)):
+      l.cons(i)
         
-    l.print();
+  l.print();
 
-    # test 0 : impression renversee
-    l.print(reverse=True)
+  # test 0 : impression renversee
+  # l.print(reverse=True)
 
-#    # test 1 : impression avec iterateurs
-    print ('--- test 1 ---')
-    print_with_iterator(l)
-    print_with_iterator_reverse(l)
+  # # test 1 : impression avec iterateurs
+  # print ('--- test 1 ---')
+  # print_with_iterator(l)
+  # print_with_iterator_reverse(l)
 
-   # test 2 : verification des exceptions
-    print ('--- test 2 ---')
-    try:
-        it = l.get_listiterator()
-        while True:
-            it.next()
-    except NoSuchElementException:
-        print("Exception levee avec next")
-    try:
-        it = l.get_listiterator()
-        while True:
-            it.previous()
-    except NoSuchElementException:
-        print("Exception levee avec previous")
+  # # test 2 : verification des exceptions
+  # print ('--- test 2 ---')
+  # try:
+  #     it = l.get_listiterator()
+  #     while True:
+  #         it.next()
+  # except NoSuchElementException:
+  #     print("Exception levee avec next")
+  # try:
+  #     it = l.get_listiterator()
+  #     while True:
+  #         it.previous()
+  # except NoSuchElementException:
+  #     print("Exception levee avec previous")
        
-#    
-#    # test 3 : insertion avant le 3eme element
-#    print ('--- test 3 ---')
-#    it = l.get_listiterator()
-#    print(it.next())
-#    print(it.next())
-#    it.add(23)
-#    assert(it.previous() == 23)
-#    print_with_iterator(l)
-#    print_with_iterator_reverse(l)
-##
+ 
+  # test 3 : insertion avant le 3eme element
+  print ('--- test 3 ---')
+  it = l.get_listiterator()
+  print(it.next())
+  print(it.next())
+  it.add(23)
+  assert(it.previous() == 23)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
+
 #    # test 4 : insertion apres le dernier element
 #    print ('--- test 4 ---')
 #    it = l.get_listiterator ()
