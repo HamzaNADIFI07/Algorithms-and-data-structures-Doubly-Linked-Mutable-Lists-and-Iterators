@@ -132,13 +132,16 @@ class List:
             self.head._Cell__print_without_iterator_forward()
 
 
-    def get_listiterator (self):
+    def get_listiterator (self , reverse = False):
         """
         Creates a new iterator for the list
 
         Returns:
           ListIterator: An iterator at the beginning of the list
         """
+        # return List.ListIterator(self)
+        if reverse == True:
+            return List.ListIterator(self,reverse)
         return List.ListIterator(self)
 
 
@@ -147,7 +150,7 @@ class List:
         Iterator over double-linked lists
         '''
         
-        def __init__(self, list):
+        def __init__(self, list, reverse=False):
             '''
             Builds a ListIterator on the provided list.
             The iterator is at the beginning of the list.
@@ -156,10 +159,23 @@ class List:
               list (List): The list to iterate on
             '''
 
-            self.list=list
-            self.nextCell=list.head
-            self.prevCell=None  
-            self.current_cell = list.head
+            # self.list=list
+            # self.nextCell=list.head
+            # self.prevCell=None  
+            # self.current_cell = list.head
+            
+            self.reverse = reverse
+            
+            if self.reverse == True:
+                self.list = list
+                self.prevCell = list.tail
+                self.nextCell = None
+                self.current_cell = list.tail
+            else:
+                self.list = list
+                self.nextCell = list.head
+                self.prevCell = None  
+                self.current_cell = list.head
 
                 
         def hasNext (self):
