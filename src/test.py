@@ -46,7 +46,14 @@ def ordered_insert (l, value):
       l (List): An ordered list.
       value (same as elements of `l`): The value to be inserted.
     """
-    pass
+    iterator=l.get_listiterator()
+    trouve=False
+    while (iterator.hasNext() and (not trouve)):
+        if iterator.nextCell.value>value:
+            trouve=True
+        else:
+            iterator.next()
+    iterator.add(value)
 
 def get (l, i):
     """
@@ -137,15 +144,30 @@ if __name__ == "__main__":
   print_with_iterator_reverse_bis(l)
    
    # test 8 : ajout après le dernier élément
-  # print ('--- test 8 ---')
-  # it = l.get_listiterator (True)
-  # it.add(5)
-  # assert(it.previous() == 5)
-  # print_with_iterator(l)
-  # print_with_iterator_reverse(l)
+  print ('--- test 8 ---')
+  it = l.get_listiterator (True)
+  it.add(5)
+  assert(it.previous() == 5)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
 ##        
-#    # test 9 : inserer trié, à vous d'écrire ce test
-#    print ('--- test 9 ---')
+#  # test 9 : inserer trié, à vous d'écrire ce test
+  print ('--- test 9 ---')
+  # On crée une list `listeTest9` et on lui rajouter les valuer suivante par ordre 4,3,2,1 (parce que `cons` rajoute les élement par la tete)
+  listeTest9 = List()
+  for i in reversed(range(1,5)):
+      listeTest9.cons(i)
+  liste_iterator = listeTest9.get_listiterator ()
+  # On rajoute l'element 5
+  ordered_insert (listeTest9, 5)
+  # On verifie que la queue de la liste à pris la valeur 5
+  assert(liste_iterator.list.tail.value == 5)
+  # On rajoute l'element 0
+  ordered_insert (listeTest9, 0)
+  # On verifie que la tete de la liste à pris la valeur 0
+  assert(liste_iterator.list.head.value == 0)
+  print_with_iterator(listeTest9)
+  print_with_iterator_reverse(listeTest9)
 #
 #    # test 10 : suppression en tete
 #    print ('--- test 10 ---')

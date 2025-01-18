@@ -87,4 +87,27 @@ Après implémentation de la fonction `add(self,value)` qui permet de ajouter un
 0
 
 ```
+##### Q5:
 
+**Le rendu du test 8 est comme suit:**
+
+```bash
+--- test 8 ---
+0 1 2 23 3 4 445 45 5 5 45 445 4 3 23 2 1 0
+```
+
+##### Q6:
+Le choix d'implémentation de la fonction `ordered_insert` qui prend en paramètre la liste dans laquelle on va ajouter le nouveau element ainsi que la valeur de l'element à ajouter, est constitué des étapes suivantes:
+1. On définit une boucle **while** avec deux condition:
+    - `iterator.hasNext()`:L'element pointé a une `next`
+    - `not trouve`:La variable initialisé a `False` et qui devient `True`, quand l'element est trouvé est encore en `False`. 
+2. 
+3. 
+4. 
+
+**Le rendu du test 9 est comme suit:**
+
+```bash
+--- test 9 ---
+0 1 2 3 4 5 5 4 3 2 1 0
+```
