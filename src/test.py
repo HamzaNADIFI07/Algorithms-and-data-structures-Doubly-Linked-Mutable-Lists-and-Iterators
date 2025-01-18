@@ -168,13 +168,24 @@ if __name__ == "__main__":
   assert(liste_iterator.list.head.value == 0)
   print_with_iterator(listeTest9)
   print_with_iterator_reverse(listeTest9)
-#
-#    # test 10 : suppression en tete
-#    print ('--- test 10 ---')
-#
-#    # test 11 : suppression en queue
-#    print ('--- test 11 ---')
-#
+
+   # test 10 : suppression en tete
+  print ('--- test 10 ---')
+  iterator = l.get_listiterator ()
+  iterator.next()
+  newHead=iterator.nextCell
+  iterator.remove()
+  assert(iterator.list.head == newHead)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l) 
+   # test 11 : suppression en queue
+  print ('--- test 11 ---')
+  iterator = l.get_listiterator (True)
+  newTail=iterator.prevCell.prev
+  iterator.remove()
+  assert(iterator.list.tail == newTail)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
 #    # test 12 : (non-)efficacite de get
 #    print ('--- test 12 ---')
 #    for i in range (1,11):

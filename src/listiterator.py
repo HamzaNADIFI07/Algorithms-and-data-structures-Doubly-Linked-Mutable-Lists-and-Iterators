@@ -283,4 +283,26 @@ class List:
             Removes from the list the last element that was returned by
             `next()`. This call can only be made once per call to `next()`.
             """
-            pass
+            nextval=self.nextCell
+            # Déplace l'itérateur en arrière pour positionner `prevCell` sur l'élement à supprimer
+            self.previous()
+            # Réinitialise `nextCell` pour pointer vers l'element qui suit l'element supprimé
+            self.nextCell=nextval
+            # Suppression en tete
+            if not self.hasPrevious():
+                # La tête de la liste est mise à jour pour pointer sur `nextCell`
+                self.list.head=self.nextCell
+            else:
+                # Sinon, on relie l'element précédent à l'elment suivant pour retirer l'element courant à supprimer
+                self.prevCell.next=nextval
+            # Suppression en à la queue
+            if not self.hasNext():
+                # La queue de la liste est mise à jour pour pointer sur `prevCell`
+                self.list.tail=self.prevCell
+            else:
+                # Sinon, on relie l'element suivant à l'element précédent
+                nextval.prev=self.prevCell
+
+
+            
+

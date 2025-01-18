@@ -110,3 +110,32 @@ Le choix d'implémentation de la fonction `ordered_insert` qui prend en paramèt
 --- test 9 ---
 0 1 2 3 4 5 5 4 3 2 1 0
 ```
+
+### Suppression avec des itérateurs
+
+##### Q1:
+Oui l'implantation réalisée ici est compatible avec des opérations de suppression parce qu'avec cette implantation on a accès à tous les elements de la liste nécessaire pour les opérations de suppression comme `next, prev...`.
+
+##### Q3:
+On a ajouté cette dernière contrainte pour éviter de faire un appel à la fonction previous() vers le vide et declancher une exception.
+
+##### Q4:
+Pour supprimer tous les élements d'une liste grâce aux itérateurs, il faudra éxecuter la suite d'instruction suivante:
+```python
+iterator = l.get_listiterator()  
+
+while iterator.hasNext():
+    iterator.next()
+    iterator.remove()
+```
+##### Q4:
+**Le rendu du test 10 et 11 est comme suit:**
+```bash
+1 2 3 4 4 3 2 1
+--- test 10 ---
+2 3 4 4 3 2
+--- test 11 ---
+2 3 3 2
+```
+
+ 
