@@ -11,6 +11,12 @@ Indiquez ici les réponses aux questions posées dans le TP. Vous
 reprendrez le numéro de la section et le numéro de la question. Par
 exemple pour répondre à la question 3 de la section 2.4 vous indiquerez :
 
+
+## Etape à suivre pour execution des tests:
+
+- Ouvrir le termial et se mettre dans le dossier `src`contenant le fichier `test.py`.
+- _Commande à executée: `python3 test.py`_
+
 ### Première phase : la liste doublement chaînée
 
 ##### Q1:
@@ -50,7 +56,15 @@ Après implémentation de la fonction `add(self,value)` qui permet de ajouter un
 --- test 3 ---
 1
 2
-1 2 23 3 4 4 3 23 2 1
+1 2 23 3 4 4 3 23 2 1 #Insertion en milieu de Liste
+```
+##### Q3:
+**Le rendu du test 4 et 5 est comme suit:**
+```bash
+--- test 4 ---
+1 2 23 3 4 45 45 4 3 23 2 1 #Insertion en fin de Liste
+--- test 5 ---
+0 1 2 23 3 4 45 45 4 3 23 2 1 0 #Insertion en début de Liste
 ```
 
 

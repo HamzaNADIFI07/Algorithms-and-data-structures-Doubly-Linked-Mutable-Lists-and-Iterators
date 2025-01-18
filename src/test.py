@@ -70,27 +70,27 @@ if __name__ == "__main__":
   l.print();
 
   # test 0 : impression renversee
-  # l.print(reverse=True)
+  l.print(reverse=True)
 
-  # # test 1 : impression avec iterateurs
-  # print ('--- test 1 ---')
-  # print_with_iterator(l)
-  # print_with_iterator_reverse(l)
+  # test 1 : impression avec iterateurs
+  print ('--- test 1 ---')
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
 
-  # # test 2 : verification des exceptions
-  # print ('--- test 2 ---')
-  # try:
-  #     it = l.get_listiterator()
-  #     while True:
-  #         it.next()
-  # except NoSuchElementException:
-  #     print("Exception levee avec next")
-  # try:
-  #     it = l.get_listiterator()
-  #     while True:
-  #         it.previous()
-  # except NoSuchElementException:
-  #     print("Exception levee avec previous")
+  # test 2 : verification des exceptions
+  print ('--- test 2 ---')
+  try:
+      it = l.get_listiterator()
+      while True:
+          it.next()
+  except NoSuchElementException:
+      print("Exception levee avec next")
+  try:
+      it = l.get_listiterator()
+      while True:
+          it.previous()
+  except NoSuchElementException:
+      print("Exception levee avec previous")
        
  
   # test 3 : insertion avant le 3eme element
@@ -103,23 +103,23 @@ if __name__ == "__main__":
   print_with_iterator(l)
   print_with_iterator_reverse(l)
 
-#    # test 4 : insertion apres le dernier element
-#    print ('--- test 4 ---')
-#    it = l.get_listiterator ()
-#    while (it.hasNext()):
-#        it.next()
-#    it.add(45)
-#    assert(it.previous() == 45)
-#    print_with_iterator(l)
-#    print_with_iterator_reverse(l)
-##
-#    # test 5 : insertion avant le premier element
-#    print ('--- test 5 ---')
-#    it = l.get_listiterator ()
-#    it.add(0)
-#    assert(it.previous() == 0)
-#    print_with_iterator(l)
-#    print_with_iterator_reverse(l)
+   # test 4 : insertion apres le dernier element
+  print ('--- test 4 ---')
+  it = l.get_listiterator ()
+  while (it.hasNext()):
+      it.next()
+  it.add(45)
+  assert(it.previous() == 45)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
+#
+   # test 5 : insertion avant le premier element
+  print ('--- test 5 ---')
+  it = l.get_listiterator ()
+  it.add(0)
+  assert(it.previous() == 0)
+  print_with_iterator(l)
+  print_with_iterator_reverse(l)
 # #
 #    # test 6 : insertion avant le dernier element avec l'iterateur placé en fin
 #    print ('--- test 6 ---')
