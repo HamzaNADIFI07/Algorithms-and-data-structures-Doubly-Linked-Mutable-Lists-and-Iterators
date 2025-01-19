@@ -201,13 +201,14 @@ class List:
             Raises:
               NoSuchElementException: if there is no such element
             """
-            if self.hasNext ():
-                nextCellule=self.nextCell
-                self.nextCell=self.nextCell.next
-                self.prevCell=nextCellule
-                return nextCellule.value
+            if self.hasNext():
+              nextCellule = self.nextCell
+              self.nextCell = self.nextCell.next
+              self.prevCell = nextCellule
+              return nextCellule.value
             else:
-              raise NoSuchElementException('There is no such element')
+              raise NoSuchElementException("There is no such element")
+
 
         def hasPrevious (self):
             """
