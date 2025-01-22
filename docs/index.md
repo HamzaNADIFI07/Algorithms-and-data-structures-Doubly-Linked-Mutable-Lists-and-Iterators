@@ -128,7 +128,7 @@ while iterator.hasNext():
     iterator.next()
     iterator.remove()
 ```
-##### Q4:
+##### Q5:
 **Le rendu du test 10 et 11 est comme suit:**
 ```bash
 1 2 3 4 4 3 2 1
@@ -138,4 +138,9 @@ while iterator.hasNext():
 2 3 3 2
 ```
 
+### Performance de l'accès au i-ème élément
+
+![time.png](../src/time.png)
+
+Les résultats montrent que l'utilisation d'un `itérateur` pour parcourir une liste est plus rapide que l'accès direct aux éléments via une méthode `get`, en particulier lorsque la taille de la liste augmente. Cela met en évidence l'efficacité des `itérateurs` pour manipuler de grandes structures de données,
  
